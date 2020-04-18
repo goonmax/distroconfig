@@ -1,0 +1,24 @@
+---
+# defaults file for pacman
+packages:
+  - python
+  - pip-pip
+  - python-virtualenv
+  - docker
+  - docker-compose
+  - go
+  - java
+  - clang
+  - curl
+  - htop
+  - httpie
+  - iotop
+  - jq
+  - less
+  - nmap
+  - openssh
+  - ripgrep
+  - rsync
+  - shellcheck
+  - usbutils
+  - which

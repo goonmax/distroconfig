@@ -1,0 +1,4 @@
+localhost
+
+[newos]
+os1 ansible_host=<name>@<ip>

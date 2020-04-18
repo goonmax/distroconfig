@@ -1,0 +1,10 @@
+- hosts: localhost
+  gather_facts: true
+  vars:
+
+
+roles: 
+  - configure-software
+  - kernel
+  - miscellaneous
+  - pacman

@@ -1,0 +1,16 @@
+---
+# tasks file for miscellaneous
+    - name: Enabling SSH Server.
+      systemd:
+        name: sshd
+        enabled: yes
+        state: started
+
+    - name: Enabling Docker.
+      systemd:
+        name: docker
+        enabled: yes
+        state: started
+
+    - name: set bashrc 
+

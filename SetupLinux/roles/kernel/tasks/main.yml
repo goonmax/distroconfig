@@ -1,0 +1,31 @@
+---
+# tasks file for kernel
+
+- name: Set timezone to {{ system_timezone }}
+  timezone:
+    name: "{{ system_timezone }}"
+
+- name: Set locale to {{ system_locale }}
+  locale_gen:
+    name: "{{ system_locale }}"
+
+- name: Upgrade Arch
+  when: ansible_facts['os_family'] == "Archlinux"
+  pacman:
+    udpate_cache: yes
+    upgrade: yes
+
+- name: Upgrade debian
+  when: ansible_facts['os_family'] == "Debian"
+  apt:
+    udpate_cache: yes
+    upgrade: yes
+
+- name: Upgrade debian
+  when: ansible_facts['os_family'] == "RatHat"
+  yum:
+    udpate_cache: yes
+    upgrade: yes
+
+- name: Do a reboot
+notify: "reboot"

@@ -1,0 +1,26 @@
+- name: install software for debian
+  become: true
+  apt:
+    name: '{{ item }}'
+    state: lastest
+    update_cache: yes
+  loop: '{{ packages }}'
+  when: ansible_facts['os_family'] == "Debian"
+
+- name: install software for arch
+  become: true
+  pacman:
+      name: '{{ item }}'
+      state: lastest
+      update_cache: yes
+  loop: '{{ packages }}'
+  when: ansible_facts['os_family'] == "Archlinux"
+
+- name: install software for yum
+  become: true
+  yum:
+      name: '{{ item }}'
+      state: lastest
+      update_cache: yes
+  loop: '{{ packages }}'
+  when: ansible_facts['os_family'] == "RedHat"
