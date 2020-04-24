@@ -12,5 +12,17 @@
         enabled: yes
         state: started
 
-    - name: set bashrc 
+    - name: Add '{{ user_name }}' to the 'docker' group
+      user:
+        name: '{{ user_name }}'
+      groups:
+        - docker
+      append: yes
+
+    - name: Enable Docker socket on startup to start
+      systemd:
+        name: docker.socket
+        enabled: yes
+        daemon_reload: yes
+      
 
