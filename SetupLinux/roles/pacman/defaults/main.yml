@@ -22,3 +22,4 @@ packages:
   - shellcheck
   - usbutils
   - which
+  - cmake
