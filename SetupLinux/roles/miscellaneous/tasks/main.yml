@@ -24,5 +24,7 @@
         name: docker.socket
         enabled: yes
         daemon_reload: yes
-      
 
+    - name: set time to UTC
+      become: true
+      hwclock: UTC
